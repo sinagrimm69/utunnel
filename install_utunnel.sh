@@ -6,6 +6,7 @@ ARCH=$(uname -m)
 # Map architecture to download URL
 case $ARCH in
     "x86_64")
+    
         URL="https://github.com/OmidEbrahimii/utunnel/releases/download/v1.0.0/utunnel_manager_amd64"
         ;;
     "aarch64" | "arm64")
