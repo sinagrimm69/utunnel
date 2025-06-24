@@ -21,7 +21,24 @@
 [![English Version](https://img.shields.io/badge/README_English-FFA500?style=for-the-badge&logo=bookstack&logoColor=white)](./README-EN.md)
 
 
+‼️ سلام و درود، بنده سازنده اسکریپت نیستم و فقط اندکی از مشکلات آن را برطرف کردم شاید در این شرایط به کارتون بیاد.
 
+✅ یک تشکر ویژه برای آقای ایمان آقاپور از طریق لینک های زیر می توانید از اون حمایت کنید.
+
+آدرس کانال یوتیوب:
+http://youtube.com/@iaghapour
+آدرس تلگرام :
+https://t.me/iaghapour
+
+🔍 اگر اسکریپت مشکلی داشت می توانید از طریق آیدی زیر مشکلات رو بگید و رفع کنم : 
+https://t.me/SirTS
+💻 راهنمای نصب و اجرا
+
+برای نصب این دستور را اجرا کنید
+
+```
+bash <(curl -s https://raw.githubusercontent.com/OmidEbrahimii/utunnel/refs/heads/main/install_utunnel.sh --ipv4)
+```
 
 
  🌐 معرفی جامع
@@ -295,14 +312,6 @@ mux_con: تعداد کانکشن‌های مولتی‌پلکس (پیش‌فرض
 443=1.1.1.1:5201         # گوش دادن به 443 و فوروارد به 5201 روی 1.1.1.1
 127.0.0.2:443=1.1.1.1:5201  # گوش دادن به 443 روی 127.0.0.2 و فوروارد به 5201 روی 1.1.1.1
 ```
-💻 راهنمای نصب و اجرا
-
-برای نصب این دستور را اجرا کنید
-
-```
-bash <(curl -s https://raw.githubusercontent.com/OmidEbrahimii/utunnel/refs/heads/main/install_utunnel.sh --ipv4)
-```
-
 🤖 نصب ربات تلگرام مونیتورینگ
 
 ```
@@ -315,25 +324,3 @@ bash <(curl -s https://raw.githubusercontent.com/OmidEbrahimii/utunnel/refs/head
 توکن ربات و چت آی دی خود را وارد نمایید
 
 زمان بررسی تانل‌ها را بر اساس ثانیه تنظیم کنید
-
-## 💰 حمایت مالی
-
-ما از حمایت شما برای توسعه و بهبود مستمر پروژه قدردانی می‌کنیم:
-
-<div align="center">
-
-| شبکه         | نوع ارز       | آدرس کیف پول                              | آیکون       |
-|--------------|--------------|------------------------------------------|------------|
-| **Tron**     | TRX (TRC20)  | `TMXRpCsbz8PKzqN4koXiErawdLXzeinWbQ`     | <img src="https://cryptologos.cc/logos/tron-trx-logo.png" width="20"> |
-| **Ethereum** | USDT (ERC20) | `0xD4cEBA0cFf6769Fb9EFE4606bE59C363Ff85BF76` | <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" width="20"> |
-
-</div>
-
-<div align="center" style="margin-top: 20px;">
-  <p>🙏 از اعتماد و حمایت ارزشمند شما سپاسگزاریم</p>
-  <p>هر میزان کمک مالی، انگیزه‌ای برای توسعه و ارتقای پروژه خواهد بود</p>
-</div>
-
-
-
-<div align="center"> <table> <tr> <td><img src="https://github.com/user-attachments/assets/29063460-b7f5-4e59-88df-bbe4bb84c836" width="300"></td> <td><img src="https://github.com/user-attachments/assets/c2f33b82-46ad-46c8-b514-2d017532e5f4" width="300"></td> </tr> <tr> <td><img src="https://github.com/user-attachments/assets/e7fbaa6e-2d6a-48c8-9696-0cc8ab528a14" width="300"></td> <td><img src="https://github.com/user-attachments/assets/59322989-d5ae-472f-a491-34104ec85b74" width="300"></td> </tr> </table> </div>
