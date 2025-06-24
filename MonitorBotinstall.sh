@@ -8,31 +8,31 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 # Paths
-INSTALL_DIR="/opt/monitorbot"
+INSTALL_DIR="/opt/TelegramBot"
 CONFIG_FILE="$INSTALL_DIR/config.conf"
-SERVICE_FILE="/etc/systemd/system/monitorbot.service"
-TEMP_ARCHIVE="/tmp/monitorbot.tar.gz"
+SERVICE_FILE="/etc/systemd/system/TelegramBot.service"
+TEMP_ARCHIVE="/tmp/TelegramBot.tar.gz"
 
 show_menu() {
     clear
     echo -e "${BLUE}==============================${NC}"
-    echo -e "${BLUE}    MonitorBot Manager        ${NC}"
+    echo -e "${BLUE}    TelegramBot Manager        ${NC}"
     echo -e "${BLUE}==============================${NC}"
-    echo -e "1. ${GREEN}Install MonitorBot${NC}"
-    echo -e "2. ${RED}Remove MonitorBot${NC}"
+    echo -e "1. ${GREEN}Install TelegramBot${NC}"
+    echo -e "2. ${RED}Remove TelegramBot${NC}"
     echo -e "3. ${YELLOW}Exit${NC}"
     echo -e "${BLUE}==============================${NC}"
     read -p "Select option [1-3]: " choice
 }
 
-install_monitorbot() {
+install_TelegramBot() {
     # Check root
     if [ "$(id -u)" -ne 0 ]; then
         echo -e "${RED}Error: This script requires root privileges${NC}"
         exit 1
     fi
 
-    echo -e "${GREEN}Starting MonitorBot installation...${NC}"
+    echo -e "${GREEN}Starting TelegramBot installation...${NC}"
 
     # Clean existing
     if [ -d "$INSTALL_DIR" ]; then
@@ -45,8 +45,8 @@ install_monitorbot() {
     mkdir -p "$INSTALL_DIR"
 
     # Download
-    echo -e "${YELLOW}Downloading MonitorBot package...${NC}"
-    if ! wget -O "$TEMP_ARCHIVE" "https://raw.githubusercontent.com/aliamg1356/utunnel/refs/heads/main/monitorbot.tar.gz"; then
+    echo -e "${YELLOW}Downloading TelegramBot package...${NC}"
+    if ! wget -O "$TEMP_ARCHIVE" "https://raw.githubusercontent.com/OmidEbrahimii/utunnel/refs/heads/main/TelegramBot.tar.gz"; then
         echo -e "${RED}Error: Download failed${NC}"
         exit 1
     fi
@@ -104,14 +104,14 @@ EOL
     echo -e "${YELLOW}Creating systemd service...${NC}"
     cat > "$SERVICE_FILE" <<EOL
 [Unit]
-Description=MonitorBot Service
+Description=TelegramBot Service
 After=network.target
 
 [Service]
 Type=simple
 User=root
 WorkingDirectory=$INSTALL_DIR
-ExecStart=$INSTALL_DIR/monitorbot.sh
+ExecStart=$INSTALL_DIR/TelegramBot.sh
 Restart=always
 RestartSec=5
 
@@ -122,32 +122,32 @@ EOL
     # Enable service
     echo -e "${YELLOW}Enabling service...${NC}"
     systemctl daemon-reload
-    systemctl enable monitorbot
-    systemctl start monitorbot
+    systemctl enable TelegramBot
+    systemctl start TelegramBot
 
     # Clean up
     rm -f "$TEMP_ARCHIVE"
 
     echo -e "${GREEN}Installation completed successfully!${NC}"
     echo -e "Configuration file created at: $CONFIG_FILE"
-    echo -e "Service status: systemctl status monitorbot"
+    echo -e "Service status: systemctl status TelegramBot"
     read -p "Press Enter to continue..."
 }
 
-remove_monitorbot() {
+remove_TelegramBot() {
     if [ "$(id -u)" -ne 0 ]; then
         echo -e "${RED}Error: This script requires root privileges${NC}"
         exit 1
     fi
 
-    echo -e "${GREEN}Starting MonitorBot removal...${NC}"
+    echo -e "${GREEN}Starting TelegramBot removal...${NC}"
 
     if [ ! -d "$INSTALL_DIR" ]; then
-        echo -e "${RED}Error: MonitorBot is not installed${NC}"
+        echo -e "${RED}Error: TelegramBot is not installed${NC}"
         exit 1
     fi
 
-    read -p "Are you sure you want to remove MonitorBot? [y/N] " confirm
+    read -p "Are you sure you want to remove TelegramBot? [y/N] " confirm
     if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
         echo -e "${YELLOW}Removal canceled${NC}"
         exit 0
@@ -155,8 +155,8 @@ remove_monitorbot() {
 
     # Stop service
     echo -e "${YELLOW}Stopping service...${NC}"
-    systemctl stop monitorbot
-    systemctl disable monitorbot
+    systemctl stop TelegramBot
+    systemctl disable TelegramBot
 
     # Remove files
     echo -e "${YELLOW}Removing files...${NC}"
@@ -165,15 +165,15 @@ remove_monitorbot() {
     
     systemctl daemon-reload
 
-    echo -e "${GREEN}MonitorBot removed successfully!${NC}"
+    echo -e "${GREEN}TelegramBot removed successfully!${NC}"
     read -p "Press Enter to continue..."
 }
 
 while true; do
     show_menu
     case $choice in
-        1) install_monitorbot ;;
-        2) remove_monitorbot ;;
+        1) install_TelegramBot ;;
+        2) remove_TelegramBot ;;
         3) echo -e "${BLUE}Exiting...${NC}"; exit 0 ;;
         *) echo -e "${RED}Invalid option! Please select 1-3${NC}"; sleep 1 ;;
     esac
